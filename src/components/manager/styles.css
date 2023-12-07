@@ -1,0 +1,26 @@
+/* styles.css */
+.display-project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .project-item {
+    margin: 8px 0;
+  }
+  
+  .add-project-btn {
+    background-color: #2ecc71; /* Change to green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-project-btn:hover {
+    background-color: #1e3f2c; /* Change hover color to a slightly darker green */
+  }
+  

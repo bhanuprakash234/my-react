@@ -1,0 +1,23 @@
+
+  
+  .sprint-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .sprint-title {
+    color: black;
+  }
+  .tasks-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .task-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  

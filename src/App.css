@@ -65,3 +65,24 @@
 .bg_color{
   background-color: rgb(110, 110, 152);
 }
+.btn-logout {
+  /* Add your custom styling for the logout button here */
+  font-size: 14px;
+  /* Add any other styles as needed */
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  border-radius: 5px;
+}
+
+.search-button {
+  border-radius: 5px;
+  margin-left: 8px;
+}
+.red-text {
+  color: red;
+}

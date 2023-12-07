@@ -3,12 +3,10 @@ import MainNavbar from "./mainNavbar";
 
 function FirstPage(){
     return(
-        <div className="bg-primary text-white">
+        <div >
             <MainNavbar />
             <Login />
-            <br /><br /><br />
-            <br />
-            <br /><br /><br /><br /><br />
+          
 
         </div>
     )

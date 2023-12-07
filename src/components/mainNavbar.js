@@ -1,27 +1,17 @@
-import { Container, Image, Nav, Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 
-import ShapeExample from "../image";
-
-function MainNavbar(){
-    
-    return(
-        <div   >
-        <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">MyApp</Navbar.Brand>
-          
-          <Nav className="me-auto">
-           
-          </Nav>
-        </Container>
+function MainNavbar() {
+  return (
+    <div>
+      <Navbar bg="dark" variant="dark" style={{ height: "50px" }}>
+        
+          <Navbar.Brand href="#home" style={{ paddingLeft: 0 }}>
+            <div style={{ width: "100%" }}>&nbsp;&nbsp;&nbsp;MyApp</div>
+          </Navbar.Brand>
+        
       </Navbar>
-      
-      <br /><br />
-      
-      
-      
-
-        </div>
-    );
+    </div>
+  );
 }
+
 export default MainNavbar;

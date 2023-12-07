@@ -11,7 +11,7 @@ function Login(){
     const doLogin=()=>{
       let token = window.btoa(username + ':' + password)
       //console.log(token);
-      axios.get('http://localhost:5050/user/login',{
+      axios.post('http://localhost:5050/auth/login',{},{
         headers:{
           'Authorization':'Basic ' + token
         }
@@ -57,11 +57,16 @@ function Login(){
                     <h3>Login</h3>
                 </div>
                 <div className="card-body">
+                {msg !==  null?
+                          <div className="alert alert-danger" role="alert">
+                            {msg}
+                        </div>
+                    :''} 
                
  
                   <div className="row " style={{textAlign: "right"}}>
                     <div className="col-md-6" style={{color:"darkslategray"}} >
-                      <label>Enter Email/Username:</label>
+                      <label>Enter Username:</label>
                     </div>
                     <div className="col-md-6 mb-4">
                       <input type="email" className="form-control" 
@@ -86,7 +91,7 @@ function Login(){
               </div>
               <div style={{textAlign:'left',color:"white"}} className="mt-4" >
                 <span style={{color:"black"}}>Don't have an Account?
-                  <button className="btn btn-link" style={{color:"white"}}
+                  <button className="btn btn-link" 
                   onClick={()=>navigate("/auth/signup")}>Signup</button>
 
                   

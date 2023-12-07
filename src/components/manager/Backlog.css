@@ -1,0 +1,28 @@
+.project-title {
+    color: blue;
+  }
+  
+  .sprint-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .sprint-title {
+    color: white;
+  }
+  
+  .tasks-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .task-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .task-details {
+    /* Add styling for task details */
+  }

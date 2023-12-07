@@ -1,63 +1,43 @@
 import { useState } from "react";
-import { Button, Container, Form, Nav, NavDropdown, Navbar, Toast } from "react-bootstrap";
+import { Button, Container, Form, Nav, NavDropdown, Navbar, ProgressBar, Toast } from "react-bootstrap";
+import ManagerNavbar from "./components/mNavbar";
+import ManagerHomeComponent from "./components/mhome";
+import { useSearchParams } from "react-router-dom";
+import ManagerEmployeeComponent from "./components/employeecomp";
+import ProjectEmployeeComponent from "./components/projectcomp";
+import ManagerSideBar from "./components/sidebar";
 function ManagerDashboard(){
     const[username,setUsername]=useState('');
     const[show,setShow]=useState('');
+    const [param] = useSearchParams();
+       const process = ()=>{
+      if(!param.get('page')){
+          return  <div>
+           <ManagerHomeComponent  />
+      </div>
+      }
+      if(param.get('page') === 'home'){
+           
+          return <div>
+              <ManagerHomeComponent />
+          </div>
+      }
+      if(param.get('page') === 'employees'){
+          return <div>
+              <ManagerEmployeeComponent />
+          </div>
+      }
+      if(param.get('page') === 'project'){
+        return <div>
+            <ProjectEmployeeComponent />
+        </div>
+    }
+    }
     return(
         <div>
-             <Navbar bg="dark" data-bs-theme="dark">
-      <Container fluid>
-        <Navbar.Brand href="#">Welcome {username}</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-          <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-          <Toast.Header>
-            {/* <img
-              src="holder.js/20x20?text=%20" 
-              className="rounded me-2"
-              alt=""
-            /> */}
-            
-          </Toast.Header>
-          <Toast.Body>
-          <Button variant="link">Send Notification</Button>
-          </Toast.Body>
-        </Toast>
-     
-        <Button onClick={() => setShow(true)}>Notifications</Button>&nbsp;&nbsp;
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            <ManagerNavbar  />
+            {process()} 
+        
 
         </div>
     );
